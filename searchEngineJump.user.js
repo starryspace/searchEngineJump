@@ -3235,13 +3235,13 @@
                     padding: 5px 0;
                     text-align: left;
                     font-size: 13px;
-                    -moz-box-shadow: 1px 1px 5px #999;
-                    -webkit-box-shadow: 2px 2px 5px #999;
-                    box-shadow: 2px 2px 5px #999;
+                    -moz-box-shadow: 0 5px 20px rgba(26,26,26,.1);
+                    -webkit-box-shadow: 0 5px 20px rgba(26,26,26,.1);
+                    box-shadow: 0 5px 20px rgba(26,26,26,.1);
                     background-color: rgba(255,255,255,.7);
                     backdrop-filter: blur(7px);
-                    border-bottom-right-radius: 3px;
-                    border-bottom-left-radius: 3px;
+                    border: 1px solid #EBEBEB !important;
+                    border-radius: 4px !important;
                     transition: opacity 0.2s ease-in-out,
                         top 0.2s ease-in-out;
                 }
