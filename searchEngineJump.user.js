@@ -5537,6 +5537,7 @@
     var delayList = [
         /^https?:\/\/google\.infinitynewtab\.com\/\?q/,
         /^https?:\/\/www\.zhihu\.com\/search\?/,
+        /^https?:\/\/www\.iciba\.com\/word\?/,
     ]
 
     var hashListTag = hashList.some(function hashUrl(element, index, array){
