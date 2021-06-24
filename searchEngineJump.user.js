@@ -109,6 +109,7 @@
 // @match          *://*.yhd.com/*
 // @match          *://*.yinyuetai.com/*
 // @match          *://*.youdao.com/*
+// @match          *://www.iciba.com/*
 // @match          *://*.youtube.com/*
 // @match          *://*.zdic.net/*
 // @match          *://*.zhihu.com/*
@@ -1207,6 +1208,19 @@
                     keyword: 'css;#query',
                     target: 'css;#scontainer',
                     where: 'beforeBegin',
+                },
+            },
+            {name: "金山词霸",
+                url: /^https?:\/\/www\.iciba\.com\/word/i,
+                enabled: true,
+                engineList: "translate",
+                style: '\
+                    z-index : 0;\
+                ',
+                insertIntoDoc: {
+                    keyword: '//input[@type="search"]',
+                    target: 'css;.Search_input__1qgiU',
+                    where: 'afterEnd',
                 },
             },
             {name: "海词",
