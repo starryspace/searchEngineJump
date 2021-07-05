@@ -3,9 +3,9 @@
 // @author         NLF&锐经(修改) & iqxin(修改)
 // @contributor    iqxin
 // @description    方便的在各个搜索引擎之间跳转,增加可视化设置菜单,能更友好的自定义设置,修复百度搜索样式丢失的问题
-// @version        5.24.1
+// @version        5.24.2
 // @created        2011-07-02
-// @lastUpdated    2021-05-22
+// @lastUpdated    2021-06-30
 
 // @namespace      https://greasyfork.org/zh-CN/scripts/27752-searchenginejump
 // @homepage       https://github.com/qxinGitHub/searchEngineJump
@@ -117,6 +117,7 @@
 // @match          *://*.ecosia.org/*
 // @match          *://*.qcc.com/*
 // @match          *://*.tianyancha.com/*
+// @match          *://www.iciba.com/*
 
 // @grant       GM_getValue
 // @grant       GM_setValue
@@ -1193,21 +1194,20 @@
                     where: 'beforeEnd',
                 },
             },
-            {name: "有道翻译",
+            {name: "有道翻译2",
                 url: /^https?:\/\/dict\.youdao\.com\/w/i,
                 enabled: true,
                 engineList: "translate",
+                fixedTop:64,
                 style: '\
                     padding-left:0px;\
-                    border-top:1px solid #D9E1F7;\
-                    border-bottom:1px solid #D9E1F7;\
-                    margin-top:0px;\
+                    margin-top:2px;\
                     text-align:center;\
                 ',
                 insertIntoDoc: {
                     keyword: 'css;#query',
-                    target: 'css;#scontainer',
-                    where: 'beforeBegin',
+                    target: 'css;.c-topbar-wrapper',
+                    where: 'beforeEnd',
                 },
             },
             {name: "金山词霸",
@@ -1240,6 +1240,21 @@
                    where: 'afterEnd'
                }
            },
+           {name: "金山词霸",
+                //    https://www.iciba.com/word?w=test
+                url: /^https?:\/\/www\.iciba\.com\/word/i,
+                enabled: true,
+                engineList: "translate",
+                fixedTop:122,
+                style: '\
+                    z-index : 0;\
+                ',
+                insertIntoDoc: {
+                    keyword: '//input[@type="search"]',
+                    target: 'css;.Search_input__1qgiU',
+                    where: 'afterEnd',
+                },
+            },
 
             // 购物
             {name: "淘宝搜索",
@@ -3243,6 +3258,7 @@
                     padding: 0;
                     margin: 0 3px 0 0;
                     vertical-align: text-bottom;
+                    box-sizing:unset;
                 }
 
                 .sej-drop-list {
@@ -5318,6 +5334,7 @@
                         "top: -20px;" +
                         "right:-20px;" +
                         "position: absolute;" +
+                        "box-sizing: unset;" +
                     "}" +
                     "#xin-close::before{" +
                         "content:'\\2716';" +
