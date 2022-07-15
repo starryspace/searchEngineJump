@@ -17,6 +17,33 @@ __说明__
 
 ### 更新历史
 
+> version 5.24.8   2022-07-04
+- 修复: 开启"AC-baidu-重定向优化百度搜狗谷歌必应搜索_favicon_双列"脚本的百度lite后,遮挡的问题
+
+> version 5.24.7   2022-07-03
+- 修复: 开启"AC-baidu-重定向优化百度搜狗谷歌必应搜索_favicon_双列"脚本后,下拉菜单会被页面其他内容遮挡的问题。
+- 已知问题: 两个脚本共存时, 百度下拉页面无法固定搜索栏, 后续会修复。
+
+> version 5.24.6   2022-07-03
+- 修复: 开启"AC-baidu-重定向优化百度搜狗谷歌必应搜索_favicon_双列"脚本后, 百度页面下拉菜单偏移的问题, 但是需要手动开启, 开启方法: 菜单 - 居中 - 强制 。由于该脚本会延迟加载, 导致以前用的自动获取失效, 如果两个脚本同时启用, 务必在“菜单”中将“居中”改为“强制”。
+- 感谢评论区里各位, 在我消失不见的这段时间里依旧不断反馈该问题。
+
+> version 5.24.5   2022-03-19
+- 修复: 在5.24.3版本 错误删除duckduckgo.com网站, 恢复一听音乐www.1ting.com [感谢JY3提醒](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/123460#comment-279499)
+
+> version 5.24.4   2022-03-18
+- 修复: 兼容bilibili搜索界面的新旧两种版面。带来的问题就是在b站固定到顶端几乎没法使用,属于两害相较取其轻了。[感谢iamking22反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/123330)
+
+> version 5.24.3   2022-03-15
+- 尚未解决的问题: 头条搜索无法跳转到淘宝;
+-  下面增加新的搜索, 还有搜索网站顺序的调整不影响老用户
+- 增加: 增加f搜的支持。感谢[ZZH-qwq](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/119203)的代码提供, 由于处于该搜索处于内测阶段,未验证代码的准确性。
+- 增加: 对今日头条搜索的支持,修复今日头条搜索链接错误的问题
+- 增加: 抖音搜索, 在社交列表; 对抖音搜索的支持(颜色显示有问题)
+- 修复: 雅虎日本搜索失效的问题
+- 修复: 哔哩哔哩搜索改版导致失效的问题,[看不见我看不见我 反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/123251)
+- 界面: 删除一听音乐www.1ting.com、音悦台yinyuetai.com、图片easyicon.net、人人影视zimuzu.tv、果壳guokr.com、秘迹搜索mijisou.com、DOG duckduckgo.com 等网站
+
 > version 5.24.2   2021-06-30
 - 修复: 在有道搜索页面再次搜索时缺失的问题。感谢[spn](https://greasyfork.org/zh-CN/scripts/27752/discussions/90926)
 - 增加: 金山词霸的支持. 感谢[spn](https://greasyfork.org/zh-CN/scripts/27752/discussions/91053)的代码提供
