@@ -8,14 +8,98 @@ __说明__
 > 拖动排序和有些拖拽手势插件冲突(原因未知), 拖拽手势插件一般按ctrl忽视手势;
 ![例图](http://odp4cbmbx.bkt.clouddn.com/%E6%90%9C%E7%B4%A2%E8%B7%B3%E8%BD%AC%E6%BC%94%E7%A4%BA.gif)
 
+### 关于乱码
+虽然不会用 github, 但是各位的反馈还是能看到的, 所以问下乱码的各位, 你们都是在 Ubuntu 的环境下出现的乱码么? 是只有在导入配置的时候才会发生乱码么?  导出环境也是 Ubuntu 还是从 Windows 这边建了文本文档导入了 Ubuntu ?  文档在 Ubuntu 中打开时的编码是什么? 此时的中文已经乱码还是正常的?
+我用虚拟机配置了 ubuntu-22.04.1 , 但还是没找到问题所在。目前从反馈图片中的乱码能看出是由于以 ISO8859-1 的方式读取了 UTF8 的编码导致。
+目前已知的一种情况, 是因为使用了 TamperMonkey (测试时最新版是v4.16.1 )的导入导出功能, 选择 文件 - 导出 功能时, 再次导入就会出现乱码的问题, 如果使用 压缩包 的导出功能, 则不会出现乱码。 但这种情况的乱码可以通过 脚本的 设置 - 更多设置 - 配置文件 - 清空设置 恢复到默认搜索列表。
 
 已知问题： 与脚本[网页解除限制](https://greasyfork.org/zh-CN/scripts/14146-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4)有[冲突](https://greasyfork.org/zh-CN/forum/discussion/21298/x)，开启后，无法进行跳转。可以暂时先用我修改后的[网页解除限制](https://greasyfork.org/zh-CN/scripts/28497-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4),大刀阔斧的修改，与原脚本使用上有较大的变化。或者自己修改下原作者的脚本, 使用 exclude 排除相关网页。
 
 
 本脚本修改自[searchEngineJump modified version from NLF 4.0.5.3](https://greasyfork.org/zh-CN/scripts/18315-searchenginejump-modified-version-from-nlf)
-此类脚本的鼻祖为 NLF 写的 [搜索引擎跳转（searchEngineJump）](http://userscripts.org/scripts/show/84970) , 不过目前该网站已经无法打开， [相关网页快照](http://web.archive.org/web/*/http://userscripts.org/scripts/show/84970)
+此类脚本的鼻祖应该为 NLF 写的 [搜索引擎跳转（searchEngineJump）](http://userscripts.org/scripts/show/84970) , 不过目前该网站已经无法打开， [相关网页快照](http://web.archive.org/web/*/http://userscripts.org/scripts/show/84970)
 
 ### 更新历史
+- 佛系更新, 具体功能以更新历史为准
+
+
+> version 5.26.  2024-12-22
+- 修复: 谷歌页面错位的问题
+
+> version 5.26.6  2023-07-03
+- 调整: 抖音的搜索栏显示位置, 以及将抖音从`社交`分组移动到`视频`中。
+
+> version 5.26.5  2023-04-22
+- 修复: 谷歌页面失效的问题 [ahgan提供解决方案](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC/discussions/179543), 以及[Drwna等](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC/discussions/170149)在评论区帮忙解决问题
+- 调整: 默认关闭滑词搜索。 有用, 但是麻烦更多, 还有太多的地方需要优化。
+
+> version 5.26.4  2023-01-28
+- 修复: 百度失效的问题(治标不治本)
+
+> version 5.26.3  2022-11-24
+- 调整: 取消了输入框内的文字的限制, 现在也可以划词搜索
+
+> version 5.26.2  2022-11-21
+- 修复: 开启一键搜索的情况下, 滑词搜索无法使用的问题。[感谢425598740反馈](https://greasyfork.org/zh-CN/scripts/27752/discussions/158307)
+
+> version 5.26.1  2022-11-11
+- 调整: 排除网站 mega
+
+> version 5.26.0  2022-11-03
+- 增加: 划词搜索功能, 可以在设置菜单中关闭
+- 调整: 样式进行更改, 去除三角箭头, 下拉搜索菜单改为居中显示
+
+> version 5.25.1  2022-10-27
+- 修复: 抖音搜索界面颜色问题
+
+> version 5.25.0  2022-10-27
+- 增加: 支持谷歌的夜间模式
+- 调整: 更新了部分图标, 但是需要用户自己重置设置才能使用新图标
+
+> version 5.24.19  2022-09-28
+- 增加: 支持慢慢买网站
+
+> version 5.24.18  2022-09-11
+-  修复: 上个版本会导致关闭“隐藏同站链接”后, 如果搜索链接是某一具体网站, 搜索词出现很多site的问题
+
+> version 5.24.17  2022-09-10
+- 修复: 京东搜索页面, 搜索栏过长会导致京东页面错位的问题。[感谢abossk反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/147572)
+- 更改: 如果搜索内容中有 site: , 跳转将不再删除site及其后面的内容。
+
+> version 5.24.16  2022-09-04
+- 修复: 谷歌搜索,菜单两行时遮挡工具栏的问题
+
+> version 5.24.15  2022-08-24
+- 修复: YouTube 网站无工具栏的问题
+- 记录: 去掉了hashList, 完全用标题监视器替代, 只要百度页面没问题就问题不大。
+
+> version 5.24.14  2022-08-24
+- 增加: 可以隐藏文字只保留图标。 设置-更多设置-配置文件 "icon" 的值改为0, 1是默认图标, 2是抽象图标。
+- 修复: 多个网站的样式调整
+- 修复: "隐藏同站链接" 现已经可以正常工作
+
+> version 5.24.13  2022-08-23
+- 增加: 添加设置 “隐藏同站链接”。 设置 - 更多设置 - 隐藏同站链接: 默认开启,百度页面会隐藏百度搜索。如果想在同一个搜索网站,但是想通过不同语言来搜索, 可以选择false来实现。 目前有问题2022-08-23 todo: 隐藏同站链接会间歇性失效。
+- 增加: 支持网站 brave.com, neeva.com(延迟加载)
+- 记录: 谷歌去掉了magin, 添加了class: "s6JM6d",用来对齐。 此版本可以给 #sej-container 添加额外的 class 
+- 登上 github 发现好多问题反馈。。。
+
+> version 5.24.12  2022-08-06
+- 修复: ecosia.org  搜索网址的变动
+- 修复: 知乎页面出现两个搜索栏的问题
+
+> version 5.24.11  2022-07-31
+- 修复: 百度页面更换搜索词或者点击下一页导致 样式丢失的问题。大概率是本月初 v5.24.6 更新导致的问题,当时为了兼容“ac百度”删除了关于百度搜索的部分代码。目前不确定是否解决, 具体有问题在反馈
+- 修复: f搜网址的变更 [感谢ZZH-qwq反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC/discussions/119203)
+- 增加: 支持谷歌镜像网站的跳转,谷歌.ml  xn--flw351e.ml  [感谢nvfddbgfh意见](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%BF%AB%E6%8D%B7%E8%B7%B3%E8%BD%AC/discussions/64397#comment-310585)
+
+> version 5.24.10  2022-07-25
+- 修复: 一键搜索无法打开包含site搜索的问题 [[感谢HelloWeirdTourist反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/142314)
+
+> version 5.24.9  2022-07-23
+- 修复: 列表超过10个无法添加的问题。[感谢HelloWeirdTourist反馈](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/142261)
+- 修复: 调整知网搜索网址。[感谢Holiday2019的帮助](https://greasyfork.org/zh-CN/scripts/27752-searchenginejump/discussions/116013)
+- 修复: 淘宝页面样式的问题
 
 > version 5.24.8   2022-07-04
 - 修复: 开启"AC-baidu-重定向优化百度搜狗谷歌必应搜索_favicon_双列"脚本的百度lite后,遮挡的问题
