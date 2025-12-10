@@ -169,11 +169,12 @@
                 enabled: true,
                 engineList: "web",
                 style: '\
-                    margin-top:5px;\
+                    margin-top:0px;\
+                    margin-bottom:15px;\
                 ',
                 insertIntoDoc: {
                     keyword: '//input[@name="q"]',
-                    target: 'css;.results--main',
+                    target: 'css;.react-results--main',
                     where: 'beforeBegin',
                 },
             },
@@ -5583,6 +5584,7 @@
         /^https?:\/\/www\.iciba\.com\/word\?/,
         /^https?:\/\/neeva\.com\/search\?/i,
         /^https?:\/\/s\.taobao\.com\/search/,
+        /^https?:\/\/duckduckgo\.com\//,
     ]
 
     // var hashListTag = hashList.some(function hashUrl(element, index, array){
