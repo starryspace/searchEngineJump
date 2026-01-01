@@ -3256,7 +3256,7 @@
                     -moz-box-shadow: 0 5px 20px rgba(26,26,26,.1);
                     -webkit-box-shadow: 0 5px 20px rgba(26,26,26,.1);
                     box-shadow: 0 5px 20px rgba(26,26,26,.1);
-                    background-color: rgba(255,255,255,.7);
+                    background-color: rgba(255,255,255,.9);
                     backdrop-filter: blur(7px);
                     border: 1px solid #EBEBEB !important;
                     border-radius: 4px !important;
